@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "PruebaIA.slnx"
+    "dotnet.defaultSolution": "PruebaIA.slnx",
+    "git.ignoreLimitWarning": true
 }
