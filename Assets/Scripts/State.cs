@@ -48,6 +48,21 @@ public class State
         }
         return this;
     }
+
+    public bool CanSeePlayer()
+    {
+        Vector3 direction = player.position - npc.transform.position;
+        float angle = Vector3.Angle(direction, npc.transform.forward);
+
+        if (direction.magnitude < visDist && angle < visAngle)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 public class Idle : State
