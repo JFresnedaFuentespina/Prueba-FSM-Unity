@@ -60,7 +60,8 @@ public class Idle : State
 
     public override void Enter()
     {
-        anim.SetTrigger("isIdle");
+        // anim.SetTrigger("isIdle");
+        Debug.Log("Idle Enter -> isIdle");
         base.Enter();
     }
 
@@ -71,12 +72,13 @@ public class Idle : State
             nextState = new Patrol(npc, agent, anim, player);
             stage = EVENT.EXIT;
         }
-        base.Update();
+        // base.Update();
     }
 
     public override void Exit()
     {
-        anim.ResetTrigger("isIdle");
+        // anim.ResetTrigger("isIdle");
+        Debug.Log("Idle Exit -> isIdle");
         base.Exit();
     }
 }
@@ -94,7 +96,8 @@ public class Patrol : State
 
     public override void Enter()
     {
-        anim.SetTrigger("isWalking");
+        Debug.Log("Patrol Enter -> isWalking");
+        // anim.SetTrigger("isWalking");
         base.Enter();
     }
 
@@ -113,12 +116,13 @@ public class Patrol : State
 
             agent.SetDestination(GameEnvironment.Singleton.CheckPoints[currentIndex].transform.position);
         }
-        base.Update();
+        // base.Update();
     }
 
     public override void Exit()
     {
-        anim.ResetTrigger("isWalking");
+        // anim.ResetTrigger("isWalking");
+        Debug.Log("Patrol Exit -> isWalking");
         base.Exit();
     }
 }
